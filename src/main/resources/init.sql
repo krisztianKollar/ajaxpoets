@@ -17,21 +17,21 @@ CREATE TABLE works (
     poet_id INTEGER NOT NULL,
     title TEXT NOT NULL,
     content TEXT NOT NULL,
-    written TEXT NOT NULL,
+    written TEXT,
     FOREIGN KEY (poet_id) REFERENCES poets(id)
 );
 
 INSERT INTO poets (name, password) VALUES
-	('Agatha Christie', 'AgChIe123'),
-	('Edgar Allan Poe', 'EdAlPo321'),
-	('JA', 'ja');
+	('Pilinszky János', 'p'), --1
+	('Fodor Ákos', 'f'), --2
+	('József Attila', 'j'); --3
 
 
-INSERT INTO works(poet_id,title,content,written) VALUES
-  (1,'Ten Little Negros','Some dummy text','1945 August 17'),
-  (1,'Murder On The Orient Express','This is a really good book','1949 June 8'),
-  (1,'The ABC Murders','A good read','1935 April 25'),
-  (2,'The Raven','dummy text raven','1845 April 5'),
-  (2,'Annabel Lee','dummy text annabelle','1849 October 9'),
-  (2,'The Black Cat','dummy text black cat','1843 August 19'),
-  (2,'The Gold-Bug','dummy text gold bug','1843 June 22');
+INSERT INTO works(poet_id, title, content, written) VALUES
+  (1, 'Négysoros', E'Alvó szegek a jéghideg homokban. \n Plakátmagányban ázó éjjelek. \n Égve hagytad a folyosón a villanyt. \n Ma ontják véremet.','1956.'),
+  (1,'Harmadnapon', E'És fölzúgnak a hamuszín egek, \n hajnalfele a ravensbrücki fák. \n És megérzik a fényt a gyökerek. \n És szél támad. És fölzeng a világ. \n Mert megölhették hitvány zsoldosok, \n és megszünhetett dobogni szive – \n Harmadnapra legyőzte a halált. \n Et resurrexit tertia die.','1975'),
+  (1,'Életfogytiglan', E'Az ágy közös. \n A párna nem.','1975'),
+  (2,'Szinopszis', E'Szerepünk kétes. \n Egy biztos: hárman vagyunk. \n Hal, háló, halász.', null),
+  (2,'Erkölcsi kérdés', E'- a rés méretén \n múlna, hogy amit látsz: azt \n nézed, vagy lesed?', null),
+  (2,'Evolúció', E'Ugyanazt írom: \n mindig más mindig másért \n olvassa másnak.', '1989'),
+  (3, 'Két hexameter', E'Mért legyek én tisztességes? Kiterítenek úgyis! \n Mért ne legyek tisztességes! Kiterítenek úgyis.', '1936');
